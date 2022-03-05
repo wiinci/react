@@ -1,5 +1,5 @@
 import {addons} from '@storybook/addons'
-import {ThemeProvider, themeGet, theme} from '../src'
+import {ThemeProvider, themeGet, theme, BaseStyles} from '../src'
 import styled, {createGlobalStyle} from 'styled-components'
 import {addDecorator} from '@storybook/react'
 import {withPerformance} from 'storybook-addon-performance'
@@ -86,7 +86,11 @@ const withThemeProvider = (Story, context) => {
           nightScheme={context.globals.nightScheme}
         >
           <ThemedSectionStyle>
-            <Story {...context} />
+            <BaseStyles>
+              <div id="html-addon-root">
+                <Story {...context} />
+              </div>
+            </BaseStyles>
           </ThemedSectionStyle>
         </ThemeProvider>
       </Wrapper>
@@ -100,18 +104,27 @@ const withThemeProvider = (Story, context) => {
       nightScheme={context.globals.nightScheme}
     >
       <GlobalStyle />
-      <Story {...context} />
+      <BaseStyles>
+        <div id="html-addon-root">
+          <Story {...context} />
+        </div>
+      </BaseStyles>
     </ThemeProvider>
   )
 }
+
 export const decorators = [withThemeProvider, withPerformance]
 
 addons.setConfig({
-  // Some stories may set up keyboard event handlers, which can can be interfered
+  // Some stories may set up keyboard event handlers, which can be interfered
   // with by these keyboard shortcuts.
   enableShortcuts: false
 })
 
 export const parameters = {
-  actions: {argTypesRegex: '^on[A-Z].*'}
+  actions: {argTypesRegex: '^on[A-Z].*'},
+  html: {
+    root: '#html-addon-root',
+    removeEmptyComments: true
+  }
 }

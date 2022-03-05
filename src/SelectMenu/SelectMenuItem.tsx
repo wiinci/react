@@ -1,7 +1,7 @@
 import {CheckIcon} from '@primer/octicons-react'
 import React, {forwardRef, useContext, useRef} from 'react'
 import styled, {css} from 'styled-components'
-import {COMMON, get, SystemCommonProps} from '../constants'
+import {get} from '../constants'
 import StyledOcticon from '../StyledOcticon'
 import sx, {SxProp} from '../sx'
 import {ComponentProps} from '../utils/types'
@@ -92,9 +92,8 @@ export const listItemStyles = css`
 
 const StyledItem = styled.a.attrs(() => ({
   role: 'menuitemcheckbox'
-}))<SystemCommonProps & SxProp>`
+}))<SxProp>`
   ${listItemStyles}
-  ${COMMON}
   ${sx};
 `
 
@@ -110,7 +109,7 @@ const SelectMenuItem = forwardRef<HTMLAnchorElement, SelectMenuItemInteralProps>
     const itemRef = forwardedRef ?? backupRef
 
     // close the menu when an item is clicked
-    // this can be overriden if the user provides a `onClick` prop and prevents default in it
+    // this can be overridden if the user provides a `onClick` prop and prevents default in it
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       onClick && onClick(e)
 

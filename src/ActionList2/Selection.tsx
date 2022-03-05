@@ -1,7 +1,7 @@
 import React from 'react'
 import {CheckIcon} from '@primer/octicons-react'
-import {ListContext} from './List'
-import {GroupContext} from './Group'
+import {ListContext, ListProps} from './List'
+import {GroupContext, GroupProps} from './Group'
 import {ItemProps} from './Item'
 import {LeadingVisualContainer} from './Visuals'
 
@@ -11,16 +11,21 @@ export const Selection: React.FC<SelectionProps> = ({selected}) => {
   const {selectionVariant: groupSelectionVariant} = React.useContext(GroupContext)
 
   /** selectionVariant in Group can override the selectionVariant in List root */
-  const selectionVariant = typeof groupSelectionVariant !== 'undefined' ? groupSelectionVariant : listSelectionVariant
+  /** fallback to selectionVariant from container menu if any (ActionMenu, SelectPanel ) */
+  let selectionVariant: ListProps['selectionVariant'] | GroupProps['selectionVariant']
+  if (typeof groupSelectionVariant !== 'undefined') selectionVariant = groupSelectionVariant
+  else selectionVariant = listSelectionVariant
 
-  // if selectionVariant is not set on List, don't show selection
   if (!selectionVariant) {
-    // to avoid confusion, fail loudly instead of silently ignoring
-    if (selected)
+    // if selectionVariant is not set on List, but Item is selected
+    // fail loudly instead of silently ignoring
+    if (selected) {
       throw new Error(
         'For Item to be selected, ActionList or ActionList.Group needs to have a selectionVariant defined'
       )
-    return null
+    } else {
+      return null
+    }
   }
 
   if (selectionVariant === 'single') {
@@ -38,7 +43,8 @@ export const Selection: React.FC<SelectionProps> = ({selected}) => {
       sx={{
         rect: {
           fill: selected ? 'accent.fg' : 'canvas.default',
-          stroke: selected ? 'accent.fg' : 'border.default'
+          stroke: selected ? 'accent.fg' : 'border.default',
+          shapeRendering: 'auto' // this is a workaround to override global style in github/github, see primer/react#1666
         },
         path: {
           fill: 'fg.onEmphasis',

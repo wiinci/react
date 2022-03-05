@@ -7,7 +7,9 @@ import Box, {BoxProps} from '../Box'
 import sx, {SxProp, merge} from '../sx'
 import createSlots from '../utils/create-slots'
 import {AriaRole} from '../utils/types'
-import {ListContext} from './List'
+import {ListContext, ListProps} from './List'
+import {GroupContext, GroupProps} from './Group'
+import {ActionListContainerContext} from './ActionListContainerContext'
 import {Selection} from './Selection'
 
 export const getVariantStyles = (variant: ItemProps['variant'], disabled: ItemProps['disabled']) => {
@@ -91,15 +93,30 @@ export const Item = React.forwardRef<HTMLLIElement, ItemProps>(
       variant = 'default',
       disabled = false,
       selected = undefined,
-      onSelect = () => null,
+      onSelect,
       sx: sxProp = {},
       id,
+      role,
       _PrivateItemWrapper,
       ...props
     },
     forwardedRef
   ): JSX.Element => {
-    const {variant: listVariant, showDividers} = React.useContext(ListContext)
+    const {variant: listVariant, showDividers, selectionVariant: listSelectionVariant} = React.useContext(ListContext)
+    const {selectionVariant: groupSelectionVariant} = React.useContext(GroupContext)
+    const {container, afterSelect, selectionAttribute} = React.useContext(ActionListContainerContext)
+
+    let selectionVariant: ListProps['selectionVariant'] | GroupProps['selectionVariant']
+    if (typeof groupSelectionVariant !== 'undefined') selectionVariant = groupSelectionVariant
+    else selectionVariant = listSelectionVariant
+
+    /** Infer item role based on the container */
+    let itemRole: ItemProps['role']
+    if (container === 'ActionMenu' || container === 'DropdownMenu') {
+      if (selectionVariant === 'single') itemRole = 'menuitemradio'
+      else if (selectionVariant === 'multiple') itemRole = 'menuitemcheckbox'
+      else itemRole = 'menuitem'
+    }
 
     const {theme} = useTheme()
 
@@ -169,20 +186,25 @@ export const Item = React.forwardRef<HTMLLIElement, ItemProps>(
     const clickHandler = React.useCallback(
       event => {
         if (disabled) return
-        if (!event.defaultPrevented) onSelect(event)
+        if (!event.defaultPrevented) {
+          if (typeof onSelect === 'function') onSelect(event)
+          // if this Item is inside a Menu, close the Menu
+          if (typeof afterSelect === 'function') afterSelect()
+        }
       },
-      [onSelect, disabled]
+      [onSelect, disabled, afterSelect]
     )
 
     const keyPressHandler = React.useCallback(
       event => {
         if (disabled) return
-
         if (!event.defaultPrevented && [' ', 'Enter'].includes(event.key)) {
-          onSelect(event)
+          if (typeof onSelect === 'function') onSelect(event)
+          // if this Item is inside a Menu, close the Menu
+          if (typeof afterSelect === 'function') afterSelect()
         }
       },
-      [onSelect, disabled]
+      [onSelect, disabled, afterSelect]
     )
 
     // use props.id if provided, otherwise generate one.
@@ -200,11 +222,12 @@ export const Item = React.forwardRef<HTMLLIElement, ItemProps>(
             sx={merge(styles, sxProp as SxProp)}
             onClick={clickHandler}
             onKeyPress={keyPressHandler}
-            aria-selected={selected}
             aria-disabled={disabled ? true : undefined}
             tabIndex={disabled || _PrivateItemWrapper ? undefined : 0}
             aria-labelledby={`${labelId} ${slots.InlineDescription ? inlineDescriptionId : ''}`}
             aria-describedby={slots.BlockDescription ? blockDescriptionId : undefined}
+            role={role || itemRole}
+            {...(selectionAttribute && {[selectionAttribute]: selected})}
             {...props}
           >
             <ItemWrapper>

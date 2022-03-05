@@ -17,6 +17,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -25,19 +35,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -45,15 +76,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -72,6 +103,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -82,7 +115,11 @@ Array [
       type="text"
     />
   </span>,
-  .c0 {
+  .c1 {
+  padding: 16px;
+}
+
+.c0 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -95,11 +132,7 @@ Array [
   border-width: 0;
 }
 
-.c1 {
-  padding: 16px;
-}
-
-<div
+<span
     className="c0"
   >
     <div>
@@ -109,7 +142,7 @@ Array [
         No results
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -130,6 +163,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -138,19 +181,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -158,15 +222,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -185,6 +249,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -195,7 +261,19 @@ Array [
       type="text"
     />
   </span>,
-  .c0 {
+  .c1 {
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -208,24 +286,12 @@ Array [
   border-width: 0;
 }
 
-.c1 {
-  padding: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c2 {
   -webkit-animation: rotate-keyframes 1s linear infinite;
   animation: rotate-keyframes 1s linear infinite;
 }
 
-<div
+<span
     className="c0"
   >
     <div
@@ -257,7 +323,7 @@ Array [
         />
       </svg>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -278,6 +344,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -286,19 +362,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -306,15 +403,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -333,6 +430,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -436,20 +535,20 @@ Array [
 }
 
 .c4[data-is-active-descendant='activated-directly'] {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c4[data-is-active-descendant='activated-indirectly'] {
-  background: rgba(46,77,108,0.06);
+  background: rgba(208,215,222,0.32);
 }
 
 .c4:focus {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
   outline: none;
 }
 
 .c4:active {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c5 {
@@ -468,6 +567,9 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c10 {
@@ -510,6 +612,7 @@ Array [
 .c6 rect {
   fill: #ffffff;
   stroke: #d0d7de;
+  shape-rendering: auto;
 }
 
 .c6 path {
@@ -530,12 +633,12 @@ Array [
 
 @media (hover:hover) and (pointer:fine) {
   .c4:hover {
-    background: var(--item-hover-bg-override,rgba(46,77,108,0.06));
+    background: var( --item-hover-bg-override,rgba(208,215,222,0.32) );
     cursor: pointer;
   }
 }
 
-<div
+<span
     className="c0"
   >
     <div>
@@ -1164,7 +1267,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -1185,6 +1288,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1193,19 +1306,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -1213,15 +1347,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -1240,6 +1374,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -1343,20 +1479,20 @@ Array [
 }
 
 .c4[data-is-active-descendant='activated-directly'] {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c4[data-is-active-descendant='activated-indirectly'] {
-  background: rgba(46,77,108,0.06);
+  background: rgba(208,215,222,0.32);
 }
 
 .c4:focus {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
   outline: none;
 }
 
 .c4:active {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c5 {
@@ -1375,11 +1511,15 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c6 rect {
   fill: #ffffff;
   stroke: #d0d7de;
+  shape-rendering: auto;
 }
 
 .c6 path {
@@ -1400,12 +1540,12 @@ Array [
 
 @media (hover:hover) and (pointer:fine) {
   .c4:hover {
-    background: var(--item-hover-bg-override,rgba(46,77,108,0.06));
+    background: var( --item-hover-bg-override,rgba(208,215,222,0.32) );
     cursor: pointer;
   }
 }
 
-<div
+<span
     className="c0"
   >
     <div>
@@ -1981,7 +2121,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -2002,6 +2142,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2010,19 +2160,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -2030,15 +2201,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -2057,6 +2228,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -2160,20 +2333,20 @@ Array [
 }
 
 .c4[data-is-active-descendant='activated-directly'] {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c4[data-is-active-descendant='activated-indirectly'] {
-  background: rgba(46,77,108,0.06);
+  background: rgba(208,215,222,0.32);
 }
 
 .c4:focus {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
   outline: none;
 }
 
 .c4:active {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c5 {
@@ -2192,11 +2365,15 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c10 rect {
   fill: #ffffff;
   stroke: #d0d7de;
+  shape-rendering: auto;
 }
 
 .c10 path {
@@ -2207,6 +2384,7 @@ Array [
 .c6 rect {
   fill: #0969da;
   stroke: #0969da;
+  shape-rendering: auto;
 }
 
 .c6 path {
@@ -2227,12 +2405,12 @@ Array [
 
 @media (hover:hover) and (pointer:fine) {
   .c4:hover {
-    background: var(--item-hover-bg-override,rgba(46,77,108,0.06));
+    background: var( --item-hover-bg-override,rgba(208,215,222,0.32) );
     cursor: pointer;
   }
 }
 
-<div
+<span
     className="c0"
   >
     <div>
@@ -2808,7 +2986,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -2829,6 +3007,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2837,19 +3025,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -2857,15 +3066,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -2884,6 +3093,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -2987,20 +3198,20 @@ Array [
 }
 
 .c4[data-is-active-descendant='activated-directly'] {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c4[data-is-active-descendant='activated-indirectly'] {
-  background: rgba(46,77,108,0.06);
+  background: rgba(208,215,222,0.32);
 }
 
 .c4:focus {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
   outline: none;
 }
 
 .c4:active {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c1 {
@@ -3016,12 +3227,12 @@ Array [
 
 @media (hover:hover) and (pointer:fine) {
   .c4:hover {
-    background: var(--item-hover-bg-override,rgba(46,77,108,0.06));
+    background: var( --item-hover-bg-override,rgba(208,215,222,0.32) );
     cursor: pointer;
   }
 }
 
-<div
+<span
     className="c0"
   >
     <div>
@@ -3327,7 +3538,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -3430,20 +3641,20 @@ Array [
 }
 
 .c4[data-is-active-descendant='activated-directly'] {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c4[data-is-active-descendant='activated-indirectly'] {
-  background: rgba(46,77,108,0.06);
+  background: rgba(208,215,222,0.32);
 }
 
 .c4:focus {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
   outline: none;
 }
 
 .c4:active {
-  background: rgba(54,77,100,0.16);
+  background: rgba(208,215,222,0.48);
 }
 
 .c1 {
@@ -3459,12 +3670,12 @@ Array [
 
 @media (hover:hover) and (pointer:fine) {
   .c4:hover {
-    background: var(--item-hover-bg-override,rgba(46,77,108,0.06));
+    background: var( --item-hover-bg-override,rgba(208,215,222,0.32) );
     cursor: pointer;
   }
 }
 
-<div
+<span
     className="c0"
   >
     <div>
@@ -3770,7 +3981,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;
 
@@ -3791,6 +4002,16 @@ Array [
 }
 
 .c0 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292f;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+  cursor: text;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3799,19 +4020,40 @@ Array [
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 34px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #24292f;
-  vertical-align: middle;
+  min-height: 32px;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-  cursor: text;
-  padding: 6px 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::-moz-placeholder {
+  color: #6e7781;
+}
+
+.c0:-ms-input-placeholder {
+  color: #6e7781;
+}
+
+.c0::placeholder {
+  color: #6e7781;
+}
+
+.c0:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.c0 > textarea {
+  padding: 12px;
+}
+
+.c0 >:not(:last-child) {
+  margin-right: 8px;
 }
 
 .c0 .TextInput-icon {
@@ -3819,15 +4061,15 @@ Array [
   -ms-flex-item-align: center;
   align-self: center;
   color: #57606a;
-  margin: 0 8px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c0:focus-within {
-  border-color: #0969da;
-  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+.c0 > input,
+.c0 > select {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width:768px) {
@@ -3846,6 +4088,8 @@ Array [
       aria-haspopup="listbox"
       aria-owns="autocompleteId-listbox"
       className="c1"
+      data-component="input"
+      id="autocompleteId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -3856,7 +4100,11 @@ Array [
       type="text"
     />
   </span>,
-  .c0 {
+  .c1 {
+  padding: 16px;
+}
+
+.c0 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3869,11 +4117,7 @@ Array [
   border-width: 0;
 }
 
-.c1 {
-  padding: 16px;
-}
-
-<div
+<span
     className="c0"
   >
     <div>
@@ -3883,6 +4127,6 @@ Array [
         No selectable options
       </div>
     </div>
-  </div>,
+  </span>,
 ]
 `;

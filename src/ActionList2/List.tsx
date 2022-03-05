@@ -3,6 +3,7 @@ import {ForwardRefComponent as PolymorphicForwardRefComponent} from '@radix-ui/r
 import styled from 'styled-components'
 import sx, {SxProp, merge} from '../sx'
 import {AriaRole} from '../utils/types'
+import {ActionListContainerContext} from './ActionListContainerContext'
 
 export type ListProps = {
   /**
@@ -23,14 +24,14 @@ export type ListProps = {
   role?: AriaRole
 } & SxProp
 
-type ContextProps = Omit<ListProps, 'sx'>
+type ContextProps = Pick<ListProps, 'variant' | 'selectionVariant' | 'showDividers' | 'role'>
 export const ListContext = React.createContext<ContextProps>({})
 
 const ListBox = styled.ul<SxProp>(sx)
 
 export const List = React.forwardRef<HTMLUListElement, ListProps>(
   (
-    {variant = 'inset', selectionVariant, showDividers = false, sx: sxProp = {}, ...props},
+    {variant = 'inset', selectionVariant, showDividers = false, role, sx: sxProp = {}, ...props},
     forwardedRef
   ): JSX.Element => {
     const styles = {
@@ -39,14 +40,31 @@ export const List = React.forwardRef<HTMLUListElement, ListProps>(
       paddingY: variant === 'inset' ? 2 : 0
     }
 
+    /** if list is inside a Menu, it will get a role from the Menu */
+    const {
+      listRole,
+      listLabelledBy,
+      selectionVariant: containerSelectionVariant // TODO: Remove after DropdownMenu2 deprecation
+    } = React.useContext(ActionListContainerContext)
+
     return (
       <ListBox
         sx={merge(styles, sxProp as SxProp)}
-        aria-multiselectable={selectionVariant === 'multiple' ? true : undefined}
+        role={role || listRole}
+        aria-labelledby={listLabelledBy}
         {...props}
         ref={forwardedRef}
       >
-        <ListContext.Provider value={{variant, selectionVariant, showDividers}}>{props.children}</ListContext.Provider>
+        <ListContext.Provider
+          value={{
+            variant,
+            selectionVariant: selectionVariant || containerSelectionVariant,
+            showDividers,
+            role: role || listRole
+          }}
+        >
+          {props.children}
+        </ListContext.Provider>
       </ListBox>
     )
   }

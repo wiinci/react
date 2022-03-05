@@ -1,6 +1,6 @@
 import React, {FocusEventHandler, KeyboardEventHandler, MouseEventHandler, RefObject, useRef, useState} from 'react'
 import {omit} from '@styled-system/props'
-import {FocusKeys} from './behaviors/focusZone'
+import {FocusKeys} from '@primer/behaviors'
 import {useCombinedRefs} from './hooks/useCombinedRefs'
 import {useFocusZone} from './hooks/useFocusZone'
 import {ComponentProps} from './utils/types'
@@ -9,10 +9,10 @@ import {TokenSizeKeys} from './Token/TokenBase'
 import {TextInputProps} from './TextInput'
 import {useProvidedRefOrCreate} from './hooks'
 import UnstyledTextInput from './_UnstyledTextInput'
-import TextInputWrapper from './_TextInputWrapper'
+import TextInputWrapper, {textInputHorizPadding, TextInputSizes} from './_TextInputWrapper'
 import Box from './Box'
 import Text from './Text'
-import {isFocusable} from './utils/iterateFocusableElements'
+import {isFocusable} from '@primer/behaviors/utils'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyReactComponent = React.ComponentType<any>
@@ -42,7 +42,7 @@ type TextInputWithTokensInternalProps<TokenComponentType extends AnyReactCompone
    */
   preventTokenWrapping?: boolean
   /**
-   * The size of the tokens
+   * The size of the tokens and text input
    */
   size?: TokenSizeKeys
   /**
@@ -66,6 +66,8 @@ const overflowCountFontSizeMap: Record<TokenSizeKeys, number> = {
 function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactComponent>(
   {
     icon: IconComponent,
+    leadingVisual: LeadingVisual,
+    trailingVisual: TrailingVisual,
     contrast,
     className,
     block,
@@ -82,7 +84,8 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
     width: widthProp,
     minWidth: minWidthProp,
     maxWidth: maxWidthProp,
-    variant: variantProp,
+    validationStatus,
+    variant: variantProp, // deprecated. use `size` instead
     visibleTokenCount,
     ...rest
   }: TextInputWithTokensInternalProps<TokenComponentType> & {
@@ -132,7 +135,7 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
   const handleTokenRemove = (tokenId: string | number) => {
     onTokenRemove(tokenId)
 
-    // HACK: wait a tick for the the token node to be removed from the DOM
+    // HACK: wait a tick for the token node to be removed from the DOM
     setTimeout(() => {
       const nextElementToFocus = containerRef.current?.children[selectedTokenIndex || 0] as HTMLElement | undefined
 
@@ -234,6 +237,12 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
   }
 
   const visibleTokens = tokensAreTruncated ? tokens.slice(0, visibleTokenCount) : tokens
+  const inputSizeMap: Record<TokenSizeKeys, TextInputSizes> = {
+    small: 'small',
+    medium: 'small',
+    large: 'medium',
+    extralarge: 'medium'
+  }
 
   return (
     <TextInputWrapper
@@ -241,14 +250,19 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
       className={className}
       contrast={contrast}
       disabled={disabled}
-      hasIcon={!!IconComponent}
+      hasLeadingVisual={Boolean(LeadingVisual)}
+      hasTrailingVisual={Boolean(TrailingVisual)}
       theme={theme}
       width={widthProp}
       minWidth={minWidthProp}
       maxWidth={maxWidthProp}
-      variant={variantProp}
+      size={size && inputSizeMap[size]}
+      validationStatus={validationStatus}
+      variant={variantProp} // deprecated. use `size` prop instead
       onClick={focusInput}
       sx={{
+        paddingLeft: textInputHorizPadding,
+        py: `calc(${textInputHorizPadding} / 2)`,
         ...(block
           ? {
               display: 'flex',
@@ -272,6 +286,12 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
         ...sxProp
       }}
     >
+      {IconComponent && !LeadingVisual && <IconComponent className="TextInput-icon" />}
+      {LeadingVisual && !IconComponent && (
+        <span className="TextInput-icon">
+          {typeof LeadingVisual === 'function' ? <LeadingVisual /> : LeadingVisual}
+        </span>
+      )}
       <Box
         ref={containerRef as RefObject<HTMLDivElement>}
         display="flex"
@@ -295,7 +315,6 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
             flexGrow: 1
           }}
         >
-          {IconComponent && <IconComponent className="TextInput-icon" />}
           <UnstyledTextInput
             ref={combinedInputRef}
             disabled={disabled}
@@ -304,6 +323,7 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
             onKeyDown={handleInputKeyDown}
             type="text"
             sx={{height: '100%'}}
+            aria-invalid={validationStatus === 'error' ? 'true' : 'false'}
             {...inputPropsRest}
           />
         </Box>
@@ -332,6 +352,11 @@ function TextInputWithTokensInnerComponent<TokenComponentType extends AnyReactCo
           </Text>
         ) : null}
       </Box>
+      {TrailingVisual && (
+        <span className="TextInput-icon">
+          {typeof TrailingVisual === 'function' ? <TrailingVisual /> : TrailingVisual}
+        </span>
+      )}
     </TextInputWrapper>
   )
 }

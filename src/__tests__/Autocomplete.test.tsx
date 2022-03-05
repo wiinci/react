@@ -311,7 +311,7 @@ describe('Autocomplete', () => {
       expect(getByDisplayValue('zero')).toBeDefined()
     })
 
-    it('clears the input value when when the user hits Escape', () => {
+    it('clears the input value when the user hits Escape', () => {
       const {container} = HTMLRender(<LabelledAutocomplete menuProps={{items: mockItems, selectedItemIds: []}} />)
       const inputNode = container.querySelector('#autocompleteInput')
 
@@ -439,6 +439,16 @@ describe('Autocomplete', () => {
       expect(handleAddItemMock).not.toHaveBeenCalled()
       fireEvent.click(addNewItemNode)
       expect(handleAddItemMock).toHaveBeenCalled()
+    })
+  })
+
+  describe('null context', () => {
+    it('throws errors when Autocomplete context is null', () => {
+      expect(() => HTMLRender(<Autocomplete.Overlay />)).toThrowError('AutocompleteContext returned null values')
+      expect(() => HTMLRender(<Autocomplete.Input />)).toThrowError('AutocompleteContext returned null values')
+      expect(() => HTMLRender(<Autocomplete.Menu items={mockItems} selectedItemIds={[]} />)).toThrowError(
+        'AutocompleteContext returned null values'
+      )
     })
   })
 })

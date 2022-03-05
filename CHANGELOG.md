@@ -1,5 +1,290 @@
 # @primer/components
 
+## 34.6.0
+
+### Minor Changes
+
+- [#1834](https://github.com/primer/react/pull/1834) [`2abd7b7a`](https://github.com/primer/react/commit/2abd7b7a1f8a1cddaf452770c9c102b9d66f3316) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionMenu2 + DropdownMenu2: Implement typeahead search. [See detailed spec.](https://github.com/github/primer/issues/518#issuecomment-999104848)
+
+### Patch Changes
+
+- [#1877](https://github.com/primer/react/pull/1877) [`50fa9880`](https://github.com/primer/react/commit/50fa98802700130576c81be85dba5695013f5f23) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Upgrade @primer/behaviors to 1.1.0
+
+* [#1876](https://github.com/primer/react/pull/1876) [`6cc9260a`](https://github.com/primer/react/commit/6cc9260a97334aea835c3981da0e8ed5d55d3467) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Better aria roles for ActionList group
+
+- [#1848](https://github.com/primer/react/pull/1848) [`96a151ac`](https://github.com/primer/react/commit/96a151ac4d6edf9b3eb3e05bbee64a49cd87e17c) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Merges drafts/DropdownMenu2 into drafts/ActionMenu2
+
+* [#1866](https://github.com/primer/react/pull/1866) [`01efa73f`](https://github.com/primer/react/commit/01efa73fb003d6529bb27c961bb802faab57d034) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Fix the behavior of Escape key in nested overlays [#1854](https://github.com/primer/react/issues/1854), now only the top most overlay will close instead of all of them.
+
+- [#1855](https://github.com/primer/react/pull/1855) [`c3b4ad70`](https://github.com/primer/react/commit/c3b4ad705a40f6e0f09dd74cf8457cb6bc0d5ca1) Thanks [@jclem](https://github.com/jclem)! - Fix [an issue](https://github.com/primer/react/issues/1849) where transitive
+  dependency interface augmentations appeared in our build output
+
+* [#1826](https://github.com/primer/react/pull/1826) [`004c4623`](https://github.com/primer/react/commit/004c4623162816cbf1b77b0b1387b8c03732675b) Thanks [@PeterYangIO](https://github.com/PeterYangIO)! - Remove unnecessary "required field" label title in favor for native `required` input attribute
+
+- [#1868](https://github.com/primer/react/pull/1868) [`f3f42553`](https://github.com/primer/react/commit/f3f425536dde3cd2c92599216987305964b76187) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Fixes a bug for theming with server side rendering where the output of the server and client mismatch [#1773](https://github.com/primer/react/issues/1773)
+
+* [#1864](https://github.com/primer/react/pull/1864) [`8558ae5b`](https://github.com/primer/react/commit/8558ae5b1734bdcf306a43a08fa0fae34f98609c) Thanks [@pksjce](https://github.com/pksjce)! - Small fixes to icon button sizes. Truthy checks for children props
+
+## 34.5.0
+
+### Minor Changes
+
+- [#1831](https://github.com/primer/react/pull/1831) [`96473f39`](https://github.com/primer/react/commit/96473f398bb0fe5f2eff1b3e8bb9110a009f1894) Thanks [@mperrotti](https://github.com/mperrotti)! - Makes validation styling available for Select and TextInputWithTokens
+
+* [#1836](https://github.com/primer/react/pull/1836) [`7e8ae653`](https://github.com/primer/react/commit/7e8ae653664796349358e80a7c5f585efe893707) Thanks [@mperrotti](https://github.com/mperrotti)! - Introduces FormControl component. The FormControl component combines the functionality of InputField and ChoiceInputField, and will replace FormGroup, InputField, and ChoiceInputField.
+
+### Patch Changes
+
+- [#1846](https://github.com/primer/react/pull/1846) [`65c405b6`](https://github.com/primer/react/commit/65c405b60c053cad4e9cb9b678d67459740764d6) Thanks [@colebemis](https://github.com/colebemis)! - PageLayout: Prevent content region from wrapping on wide viewports
+
+* [#1856](https://github.com/primer/react/pull/1856) [`3f405221`](https://github.com/primer/react/commit/3f405221c64abb90c1f3a54211b62a90e9354d98) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Revert "Overlay: Attach escape handler to overlay container"
+
+- [#1850](https://github.com/primer/react/pull/1850) [`fad43d67`](https://github.com/primer/react/commit/fad43d67bd82b51104c11900871be9132219e6f8) Thanks [@mperrotti](https://github.com/mperrotti)! - FormControl:
+  - Add `sx` prop
+  - Rename `appearance` prop to `variant`
+
+## 34.4.0
+
+### Minor Changes
+
+- [#1812](https://github.com/primer/react/pull/1812) [`97bf7c62`](https://github.com/primer/react/commit/97bf7c627bb10cdd18406557e6f1e79a39ed5b48) Thanks [@rezrah](https://github.com/rezrah)! - Add new Textarea component
+
+### Patch Changes
+
+- [#1824](https://github.com/primer/react/pull/1824) [`4eab65e5`](https://github.com/primer/react/commit/4eab65e57571d64a0f8a4fcb4aafbf47d3e98a2d) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Overlay: Attach escape handler to overlay container instead of document to fix stopPropagation
+
+* [#1840](https://github.com/primer/react/pull/1840) [`1c4786c7`](https://github.com/primer/react/commit/1c4786c7d99fe083b47902acff5326c44a7c8288) Thanks [@jclem](https://github.com/jclem)! - Set Node.js and npm versions to ">=12" and ">=7", respectively, in package.json manifests, and update package-lock.json files accordingly.
+
+- [#1828](https://github.com/primer/react/pull/1828) [`6a695bdc`](https://github.com/primer/react/commit/6a695bdcea356821390f42c575d78a2f5ded6e86) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionMenu2 + DropdownMenu2: A keyboard user will be able to wrap through options
+
+* [#1810](https://github.com/primer/react/pull/1810) [`35ad7084`](https://github.com/primer/react/commit/35ad7084bca048748479301e286ca305faada5b2) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionMenu2 + DropdownMenu2: Focus the correct element when Menu is opened with keyboard. [See detailed spec.](https://github.com/github/primer/issues/518#issuecomment-999104848)
+
+  - ArrowDown | Space | Enter: first element
+  - ArrowUp: last element
+
+- [#1842](https://github.com/primer/react/pull/1842) [`11011f55`](https://github.com/primer/react/commit/11011f5598a2c97f2dbb5928962dfa12b7437be0) Thanks [@jclem](https://github.com/jclem)! - Allow `KeyPaths` type to accept any type in order to remove need for `// @ts-ignore` internally.
+
+* [#1820](https://github.com/primer/react/pull/1820) [`50c7bfaa`](https://github.com/primer/react/commit/50c7bfaa283154e28d1905e3eb01f7f01901c806) Thanks [@colebemis](https://github.com/colebemis)! - Add draft `PageLayout` component
+
+## 34.3.0
+
+### Minor Changes
+
+- [#1797](https://github.com/primer/react/pull/1797) [`8b376b9d`](https://github.com/primer/react/commit/8b376b9d3c894eaa1a77edbdd3d168d3afa7b66d) Thanks [@mperrotti](https://github.com/mperrotti)! - Introduces a draft for component to replace the existing Label component
+
+### Patch Changes
+
+- [#1759](https://github.com/primer/react/pull/1759) [`493c6ea1`](https://github.com/primer/react/commit/493c6ea1e92382fd3bbbfb002b2127fafbd7bc6f) Thanks [@siddharthkp](https://github.com/siddharthkp)! - AnchoredOverlay: Add support for passing an id to the anchor. Remove unnecessary aria-labelledby on anchor.
+  ActionMenu v2: Add aria-labelledby for ActionList
+
+* [#1779](https://github.com/primer/react/pull/1779) [`2630800d`](https://github.com/primer/react/commit/2630800d7905b1004d40481ab4f25517bcc34f5a) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionMenu v2: ActionMenu.Button now uses Button v2
+
+- [#1735](https://github.com/primer/react/pull/1735) [`8ff114b1`](https://github.com/primer/react/commit/8ff114b1347047f9a518d7d361da455a59573f3b) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Add composable `DropdownMenu` to `@primer/components/drafts`
+
+* [#1814](https://github.com/primer/react/pull/1814) [`384c3756`](https://github.com/primer/react/commit/384c375649da0718cc66b088e3ec5928afbeaded) Thanks [@pksjce](https://github.com/pksjce)! - Upgrade @primer/behaviors
+
+- [#1804](https://github.com/primer/react/pull/1804) [`aa09ed79`](https://github.com/primer/react/commit/aa09ed790ba9461a4516c546924a4673c0b21462) Thanks [@rezrah](https://github.com/rezrah)! - Fixes bug in PointerBox component where caret doesn't inherit correct styling. Backwards compatible with previous API.
+
+## 34.2.0
+
+### Minor Changes
+
+- [#1736](https://github.com/primer/react/pull/1736) [`82961d44`](https://github.com/primer/react/commit/82961d441b2108243a8798990f896969fe245457) Thanks [@mperrotti](https://github.com/mperrotti)! - Adds a component for a native select input
+
+* [#1657](https://github.com/primer/react/pull/1657) [`d143c956`](https://github.com/primer/react/commit/d143c956cd867fe7858670dd58ce69ec652a4c4d) Thanks [@mperrotti](https://github.com/mperrotti)! - Adds ChoiceFieldset component
+
+### Patch Changes
+
+- [#1758](https://github.com/primer/react/pull/1758) [`b604403c`](https://github.com/primer/react/commit/b604403c709a7c766d69001bc080957d88a0ed7b) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionMenu v2: Add aria-expanded to the ActionMenu.Button
+
+* [#1770](https://github.com/primer/react/pull/1770) [`39a3bc29`](https://github.com/primer/react/commit/39a3bc29d1362c382027f8749e171fc2b7caa0da) Thanks [@PeterYangIO](https://github.com/PeterYangIO)! - Adds aria-hidden="true" to InputLabel required asterisk
+
+- [#1781](https://github.com/primer/react/pull/1781) [`064828d2`](https://github.com/primer/react/commit/064828d27584bf098ec370881319a26420eb40e7) Thanks [@rezrah](https://github.com/rezrah)! - restores color prop functionality to StyledOcticon
+
+* [#1794](https://github.com/primer/react/pull/1794) [`a8c427da`](https://github.com/primer/react/commit/a8c427dab3c7450c1c69b76d600a529f72268214) Thanks [@rezrah](https://github.com/rezrah)! - replace `Location | Pathname` union type for `to` prop with more appropriate `To`
+
+- [#1772](https://github.com/primer/react/pull/1772) [`52947c44`](https://github.com/primer/react/commit/52947c4446a334180362bd927c4d54b028e036ba) Thanks [@pksjce](https://github.com/pksjce)! - Export SelectPanel from the package
+
+* [#1757](https://github.com/primer/react/pull/1757) [`6e44d786`](https://github.com/primer/react/commit/6e44d7869c1eba7f5ba9d6bfaaf61b78be721bfd) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionList v2 Divider: Make divider aria-hidden
+
+- [#1751](https://github.com/primer/react/pull/1751) [`03584e09`](https://github.com/primer/react/commit/03584e09830956bbd4cd721c26566e29966a7cef) Thanks [@talune](https://github.com/talune)! - Fix AvatarStack opacity for children without sx prop
+
+* [#1791](https://github.com/primer/react/pull/1791) [`6a8472b4`](https://github.com/primer/react/commit/6a8472b4acc65dc2609a46fab69d83c89e23956f) Thanks [@rezrah](https://github.com/rezrah)! - Fix type errors due to missing pathname (string) in union type for LocationDescriptor
+
+## 34.1.0
+
+### Minor Changes
+
+- [#1611](https://github.com/primer/react/pull/1611) [`11382eeb`](https://github.com/primer/react/commit/11382eeb60441fe4d03f5aedf1f28b4b061cb07d) Thanks [@mperrotti](https://github.com/mperrotti)! - Adds TextInputField, CheckboxInputField, and RadioInputField components. Also adds a few internal (private to primer/react) components to support form fields
+
+### Patch Changes
+
+- [#1754](https://github.com/primer/react/pull/1754) [`08cdb0bc`](https://github.com/primer/react/commit/08cdb0bcad859663e7e425a89d3b696388f449f3) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Fix title and subtitle tag for Dialog2 and ConfirmationDialog
+
+* [#1730](https://github.com/primer/react/pull/1730) [`a9dc6f20`](https://github.com/primer/react/commit/a9dc6f20b65d3ed31d4bb13dd234a3c7b36caf10) Thanks [@pksjce](https://github.com/pksjce)! - NewButton -> Button2 file name changes
+
+- [#1742](https://github.com/primer/react/pull/1742) [`4ab78a26`](https://github.com/primer/react/commit/4ab78a26eaeea517b65ec202a2abeb7f93dcfc89) Thanks [@pksjce](https://github.com/pksjce)! - Fix for SelectPanel Filter width
+
+## 34.0.1
+
+### Patch Changes
+
+- [#1661](https://github.com/primer/react/pull/1661) [`6f13441b`](https://github.com/primer/react/commit/6f13441b074bc47e4982bdb15e0470378799dfe0) Thanks [@pksjce](https://github.com/pksjce)! - Text Input enhancements
+
+* [#1700](https://github.com/primer/react/pull/1700) [`9d2827a9`](https://github.com/primer/react/commit/9d2827a9cbb023c0a412d8040182a887651a55b7) Thanks [@dgreif](https://github.com/dgreif)! - Use extracted [@primer/behaviors](https://github.com/primer/behaviors) for hook behaviors
+
+- [#1712](https://github.com/primer/react/pull/1712) [`4ce8f07b`](https://github.com/primer/react/commit/4ce8f07be6452ef9bc55ca61ce03202d5ab6a3f9) Thanks [@colebemis](https://github.com/colebemis)! - Remove "engines" field from package.json
+
+* [#1734](https://github.com/primer/react/pull/1734) [`bba4c245`](https://github.com/primer/react/commit/bba4c2451f1c32cd25e7351ad8f808dc22c85e97) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Button v2 - Fix font family
+
+## 34.0.0
+
+### Major Changes
+
+- [#1676](https://github.com/primer/react/pull/1676) [`1195336e`](https://github.com/primer/react/commit/1195336e475441f6f7bc266630070834ad564503) Thanks [@colebemis](https://github.com/colebemis)! - Rename npm package from `@primer/components` to `@primer/react`
+
+  To upgrade, run:
+
+  ```shell
+  npm uninstall @primer/components
+  npm install @primer/react
+  ```
+
+  Then update your imports:
+
+  ```diff
+  - import {Box} from '@primer/components'
+  + import {Box} from '@primer/react'
+  ```
+
+## 33.1.0
+
+### Minor Changes
+
+- [#1658](https://github.com/primer/react/pull/1658) [`edc48ba8`](https://github.com/primer/react/commit/edc48ba817e2052d2f4ed8e602bffd92e82b8893) Thanks [@rezrah](https://github.com/rezrah)! - Adds a Radio component
+
+### Patch Changes
+
+- [#1675](https://github.com/primer/react/pull/1675) [`2380b668`](https://github.com/primer/react/commit/2380b66848a885ee5dd2e6b07a1173201976545f) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionMenu v2: Added `ActionMenu.Overlay` which accepts props to customize the Menu overlay.
+
+* [#1702](https://github.com/primer/react/pull/1702) [`2c42c382`](https://github.com/primer/react/commit/2c42c382fc4ddf50fc18dd62ca854dc04304a539) Thanks [@colebemis](https://github.com/colebemis)! - Update `BranchName` styles to match github.com
+
+## 33.0.0
+
+### Major Changes
+
+- [#1643](https://github.com/primer/react/pull/1643) [`3938550f`](https://github.com/primer/react/commit/3938550fb3ea3fbec542a0cadaf6aeb734fba938) Thanks [@jfuchs](https://github.com/jfuchs)! - Details no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1643](https://github.com/primer/react/pull/1643) [`3938550f`](https://github.com/primer/react/commit/3938550fb3ea3fbec542a0cadaf6aeb734fba938) Thanks [@jfuchs](https://github.com/jfuchs)! - Avatar no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1643](https://github.com/primer/react/pull/1643) [`3938550f`](https://github.com/primer/react/commit/3938550fb3ea3fbec542a0cadaf6aeb734fba938) Thanks [@jfuchs](https://github.com/jfuchs)! - BranchName no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1643](https://github.com/primer/react/pull/1643) [`3938550f`](https://github.com/primer/react/commit/3938550fb3ea3fbec542a0cadaf6aeb734fba938) Thanks [@jfuchs](https://github.com/jfuchs)! - Heading no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+### Minor Changes
+
+- [#1619](https://github.com/primer/react/pull/1619) [`a13efa45`](https://github.com/primer/react/commit/a13efa457ded69656fb390b5b9b666d00157fd21) Thanks [@siddharthkp](https://github.com/siddharthkp)! - Add composable `ActionMenu` to `@primer/components/drafts`
+
+* [#1679](https://github.com/primer/react/pull/1679) [`006cc80b`](https://github.com/primer/react/commit/006cc80bd8fa2f31947e17e0683880e0b8cdc400) Thanks [@mattcosta7](https://github.com/mattcosta7)! - Add `resolvedColorScheme` property to the object returned by `useTheme()`
+
+### Patch Changes
+
+- [#1668](https://github.com/primer/react/pull/1668) [`98dc6336`](https://github.com/primer/react/commit/98dc633674b793edfa4fbeb88fd239e6ca40544e) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionList: Fix multiple selection svg by overriding global shape-rendering for github.com
+
+* [#1596](https://github.com/primer/react/pull/1596) [`5c6dc644`](https://github.com/primer/react/commit/5c6dc644c1e68b36d309deac653aca189f1fa624) Thanks [@dmarcey](https://github.com/dmarcey)! - Fix alignment of items in ActionList (single-select) if some of the items have wrapping text.
+
+- [#1538](https://github.com/primer/react/pull/1538) [`dda6e5d7`](https://github.com/primer/react/commit/dda6e5d7204347c3c66183464dd0903e878a4f20) Thanks [@shiftkey](https://github.com/shiftkey)! - Update `typescript` package to correct generated type declarations.
+
+## 32.1.0
+
+### Minor Changes
+
+- [#1606](https://github.com/primer/react/pull/1606) [`985120a6`](https://github.com/primer/react/commit/985120a61b62c1bbd1872d9a11e34fab407a4096) Thanks [@rezrah](https://github.com/rezrah)! - Adds a new Checkbox form component
+
+### Patch Changes
+
+- [#1648](https://github.com/primer/react/pull/1648) [`8b40a0a9`](https://github.com/primer/react/commit/8b40a0a91f6804496f78c342be62607983ee4081) Thanks [@jfuchs](https://github.com/jfuchs)! - Fixed a bug with Overlay's type where DOM props were not allowed.
+
+## 32.0.1
+
+### Patch Changes
+
+- [#1649](https://github.com/primer/react/pull/1649) [`b1315367`](https://github.com/primer/react/commit/b1315367858c6b4319ac601e5e324bb37331e4a3) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrading primer/primitives@7.1.1
+
+* [#1652](https://github.com/primer/react/pull/1652) [`47550d34`](https://github.com/primer/react/commit/47550d3400fec87a26eb74c8344dfbd71635a3f5) Thanks [@colebemis](https://github.com/colebemis)! - Fix preval of `theme-preval.js`
+
+## 32.0.0
+
+### Major Changes
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Truncate no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Timeline no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Dropdown no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Pagehead no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - LabelGroup no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Link no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Popover no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - StateLabel no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - CircleBadge no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - SelectMenu no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Header no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - UnderlineNav no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Overlay no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - StyledOcticon no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Dialog no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - TabNav no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - SubNav no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Dialog2 no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Buttons no longer accept styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Label no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Flash no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Tooltip no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Pagination no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - Breadcrumbs no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - FilteredSearch no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - SideNav no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - FilterList no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+* [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - CounterLabel no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+- [#1639](https://github.com/primer/react/pull/1639) [`8ce0eb92`](https://github.com/primer/react/commit/8ce0eb92d23e2d46760e8b77900e10e7c04da43e) Thanks [@jfuchs](https://github.com/jfuchs)! - FormGroup no longer accepts styled-system props. Please use the `sx` prop to extend Primer component styling instead. See also https://primer.style/react/overriding-styles for information about `sx` and https://primer.style/react/system-props for context on the removal.
+
+### Patch Changes
+
+- [#1598](https://github.com/primer/react/pull/1598) [`3bb895f1`](https://github.com/primer/react/commit/3bb895f1a2cbd36d509f005524878d14218acb39) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionList: Better semantics for accessible ActionList.Group
+
+* [#1601](https://github.com/primer/react/pull/1601) [`250e4b00`](https://github.com/primer/react/commit/250e4b00f4d996b6125d381bae2487b57156687c) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionList: Use icon instead of input for multiple selection in ActionList
+
+- [#1629](https://github.com/primer/react/pull/1629) [`47fdbf40`](https://github.com/primer/react/commit/47fdbf40c3b3e0b0efaa7d50e4c08e283eecc5ee) Thanks [@siddharthkp](https://github.com/siddharthkp)! - ActionList: Visual update for disabled Items to make them more obvious
+
+* [#1486](https://github.com/primer/react/pull/1486) [`34cfca53`](https://github.com/primer/react/commit/34cfca53f8a85a5639b958c61a2474be7390d8a9) Thanks [@pksjce](https://github.com/pksjce)! - ActionList: Add focus and hover colors to all themes in Item using functional variables
+
 ## 31.2.0
 
 ### Minor Changes
@@ -372,7 +657,7 @@
 
 - [`d20a5996`](https://github.com/primer/react/commit/d20a5996aafdbc6446f13aaa7a489394926f083a) [#1209](https://github.com/primer/react/pull/1209) Thanks [@dgreif](https://github.com/dgreif)! - Allow Overlay height and width to be set through AnchoredOverlay
   Allow ActionList Items to supply an `id` instead of `key`
-  Performance imporvements when ActionList is not given any groups
+  Performance improvements when ActionList is not given any groups
   Enable focus zone as soon as AnchoredOverlay opens
 
 * [`d29741ca`](https://github.com/primer/react/commit/d29741cab4bfa4249000e5b2479e99f5aeea3189) [#1196](https://github.com/primer/react/pull/1196) Thanks [@dgreif](https://github.com/dgreif)! - Allow custom `children` in `ActionItem`. `text` and `description` can still be provided as a shortcut, but `children` is now available if you need more control over the rending of the item, without sacrificing benefits from `Item` by using `renderItem`.

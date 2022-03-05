@@ -19,6 +19,8 @@
       url: /overriding-styles
     - title: Server-side rendering
       url: /ssr
+    - title: Component status
+      url: /status
 - title: Hooks
   children:
     - title: useSafeTimeout
@@ -37,6 +39,8 @@
       url: /Autocomplete
     - title: Avatar
       url: /Avatar
+    - title: AvatarPair
+      url: /AvatarPair
     - title: AvatarStack
       url: /AvatarStack
     - title: Box
@@ -47,6 +51,10 @@
       url: /Breadcrumbs
     - title: Buttons
       url: /Buttons
+    - title: Checkbox
+      url: /Checkbox
+    - title: CheckboxGroup
+      url: /CheckboxGroup
     - title: CircleBadge
       url: /CircleBadge
     - title: CircleOcticon
@@ -55,18 +63,14 @@
       url: /CounterLabel
     - title: Details & useDetails
       url: /Details
-    - title: Dialog
-      url: /Dialog
-    - title: Dropdown
-      url: /Dropdown
     - title: FilteredSearch
       url: /FilteredSearch
     - title: FilterList
       url: /FilterList
     - title: Flash
       url: /Flash
-    - title: FormGroup
-      url: /FormGroup
+    - title: FormControl
+      url: /FormControl
     - title: Header
       url: /Header
     - title: Heading
@@ -77,8 +81,8 @@
       url: /LabelGroup
     - title: Link
       url: /Link
-    # - title: Overlay
-    #   url: /Overlay
+    - title: Overlay
+      url: /Overlay
     - title: Pagehead
       url: /Pagehead
     - title: Pagination
@@ -91,8 +95,14 @@
     #   url: /Portal
     - title: ProgressBar
       url: /ProgressBar
-    - title: SelectMenu
-      url: /SelectMenu
+    - title: Radio
+      url: /Radio
+    - title: RadioGroup
+      url: /RadioGroup
+    - title: Select
+      url: /Select
+    - title: SelectPanel
+      url: /SelectPanel
     - title: SideNav
       url: /SideNav
     - title: Spinner
@@ -105,6 +115,8 @@
       url: /SubNav
     - title: TabNav
       url: /TabNav
+    - title: Textarea
+      url: /Textarea
     - title: Text
       url: /Text
     - title: TextInput
@@ -121,13 +133,33 @@
       url: /Truncate
     - title: UnderlineNav
       url: /UnderlineNav
+- title: Drafts
+  children:
+    - title: Button v2
+      url: /drafts/Button2
+    - title: LinkButton
+      url: /drafts/LinkButton
+    - title: IconButton
+      url: /drafts/IconButton
+    - title: ActionList v2
+      url: /drafts/ActionList2
+    - title: ActionMenu v2
+      url: /drafts/ActionMenu2
 - title: Deprecated
   children:
     - title: BorderBox
-      url: /BorderBox
+      url: /deprecated/BorderBox
     - title: Flex
-      url: /Flex
+      url: /deprecated/Flex
     - title: Grid
-      url: /Grid
+      url: /deprecated/Grid
     - title: Position
-      url: /Position
+      url: /deprecated/Position
+    - title: Dialog
+      url: /deprecated/Dialog
+    - title: Dropdown
+      url: /deprecated/Dropdown
+    - title: FormGroup
+      url: /FormGroup
+    - title: SelectMenu
+      url: /deprecated/SelectMenu

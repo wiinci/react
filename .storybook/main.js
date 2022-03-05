@@ -4,6 +4,7 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    'storybook-addon-performance/register'
+    'storybook-addon-performance/register',
+    ...(process.env.NODE_ENV === 'production' ? ['@whitespace/storybook-addon-html'] : [])
   ]
 }
