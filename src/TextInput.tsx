@@ -1,8 +1,8 @@
 import classnames from 'classnames'
 import React from 'react'
 import {ComponentProps, Merge} from './utils/types'
+import TextInputWrapper, {StyledWrapperProps} from './_TextInputWrapper'
 import UnstyledTextInput from './_UnstyledTextInput'
-import TextInputWrapper from './_TextInputWrapper'
 
 type NonPassthroughProps = {
   className?: string
@@ -11,12 +11,11 @@ type NonPassthroughProps = {
   leadingVisual?: string | React.ComponentType<{className?: string}>
   trailingVisual?: string | React.ComponentType<{className?: string}>
 } & Pick<
-  ComponentProps<typeof TextInputWrapper>,
-  'block' | 'contrast' | 'disabled' | 'sx' | 'width' | 'maxWidth' | 'minWidth' | 'variant' | 'size'
+  StyledWrapperProps,
+  'block' | 'contrast' | 'disabled' | 'sx' | 'width' | 'maxWidth' | 'minWidth' | 'variant' | 'size' | 'validationStatus'
 >
 
-// Note: using ComponentProps instead of ComponentPropsWithoutRef here would cause a type issue where `css` is a required prop.
-type TextInputInternalProps = Merge<React.ComponentPropsWithoutRef<typeof UnstyledTextInput>, NonPassthroughProps>
+type TextInputInternalProps = Merge<React.ComponentPropsWithoutRef<'input'>, NonPassthroughProps>
 
 // using forwardRef is important so that other components (ex. SelectMenu) can autofocus the input
 const TextInput = React.forwardRef<HTMLInputElement, TextInputInternalProps>(
