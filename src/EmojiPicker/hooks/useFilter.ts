@@ -1,8 +1,8 @@
-import reduceBatch from '../../lib/reduceBatch'
-import {EMOJI_PROPERTY_GROUP} from '../../lib/constants'
-import emojiStorage from '../../lib/emojiStorage'
+import reduceBatch from '../lib/reduceBatch'
+import {EMOJI_PROPERTY_GROUP} from '../lib/constants'
+import emojiStorage from '../lib/emojiStorage'
 
-import keywordsPromise from '../../lib/initSearch'
+import keywordsPromise from '../lib/initSearch'
 import {useFilterValue, useSetFilter} from '../PickerContext'
 
 let searchTerms, mappedSearchTerms

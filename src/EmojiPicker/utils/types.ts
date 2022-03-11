@@ -1,0 +1,30 @@
+import {
+  SKIN_TONE_DARK,
+  SKIN_TONE_LIGHT,
+  SKIN_TONE_MEDIUM,
+  SKIN_TONE_MEDIUM_DARK,
+  SKIN_TONE_MEDIUM_LIGHT,
+  SKIN_TONE_NEUTRAL
+} from '../components/SkinTones'
+import {
+  EMOJI_PROPERTY_GROUP,
+  EMOJI_PROPERTY_NAME,
+  EMOJI_PROPERTY_SKIN_VARIATIONS,
+  EMOJI_PROPERTY_UNIFIED
+} from './constants'
+
+export interface Emoji {
+  [EMOJI_PROPERTY_NAME]: Array<string>
+  [EMOJI_PROPERTY_UNIFIED]: string
+  [EMOJI_PROPERTY_SKIN_VARIATIONS]?: Array<string>
+  [EMOJI_PROPERTY_GROUP]: string
+}
+
+export const SkinTones = {
+  Neutral: SKIN_TONE_NEUTRAL,
+  Light: SKIN_TONE_LIGHT,
+  MediumLight: SKIN_TONE_MEDIUM_LIGHT,
+  Medium: SKIN_TONE_MEDIUM,
+  MediumDark: SKIN_TONE_MEDIUM_DARK,
+  Dark: SKIN_TONE_DARK
+}

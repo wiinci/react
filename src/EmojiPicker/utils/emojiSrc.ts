@@ -1,6 +1,6 @@
-import useEmojiUrl from '../../hooks/useEmojiUrl'
+import useEmojiUrl from '../hooks/useEmojiUrl'
 
-const emojiSrc = unified => ({
+const emojiSrc = (unified: string) => ({
   src: useEmojiUrl(unified)
 })
 

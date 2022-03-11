@@ -1,5 +1,5 @@
 import React from 'react'
-import skinTones from '../../skinTones.json'
+import {skinTones} from '../../emojis'
 import {
   useActiveSkinTone,
   useSetActiveSkinTone,
@@ -17,11 +17,6 @@ import {
 } from './constants'
 import styled from 'styled-components'
 
-const SkinToneMap = {
-  neutral: '#ffd225',
-  '1f3fb': '#ffdfbd'
-}
-
 const SkinTonesList = styled.ul`
   padding: 0;
   margin: 0;
@@ -31,7 +26,7 @@ const SkinTonesList = styled.ul`
   right: 40px;
 `
 
-const SkinTonesListItem = styled.li<{isActive: boolean; itemNumber: number; skinToneSpread: boolean}>`
+const SkinTonesListItem = styled.li<{isActive: boolean; itemNumber: number; skinToneSpread?: boolean}>`
   background-color: currentColor;
   position: absolute;
   padding: 0;

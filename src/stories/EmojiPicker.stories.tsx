@@ -67,7 +67,7 @@ export const defaultEmojiPicker = (args: EmojiPickerProps) => {
 
   return (
     <Box sx={{display: 'flex', alignItems: 'flex-start'}}>
-      <EmojiPicker customCategories={customCategories} onSelect={e => setEmoji(e)} {...args} />
+      <EmojiPicker {...args} />
       <Text sx={{ml: 3, fontSize: 6}}>{emoji}</Text>
     </Box>
   )

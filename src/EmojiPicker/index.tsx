@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React, {useEffect, useRef} from 'react'
+import React, {FC, useEffect, useRef} from 'react'
 
 import CategoriesNav from './components/CategoriesNav'
 import EmojiList from './components/EmojiList'
@@ -14,31 +13,55 @@ import {
   SKIN_TONE_NEUTRAL
 } from './components/SkinTones'
 import VariationsMenu from './components/VariationsMenu'
-import clickHandler from './lib/clickHandler'
-import {GROUP_NAMES_ENGLISH} from './lib/constants'
-import {configPropTypes} from './lib/propTypes'
-import {getRecentlyUsed} from './lib/recentlyUsed'
-import {PickerContextProvider, useCloseVariationMenu} from './PickerContext'
+import clickHandler from './utils/clickHandler'
+import {GROUP_NAMES_ENGLISH} from './utils/constants'
+import {getRecentlyUsed} from './utils/recentlyUsed'
+import {GroupNames, PickerContextProvider, useCloseVariationMenu} from './PickerContext'
 
 import './style.css'
+import {SkinTones} from './utils/types'
 
 const DEFAULT_EMOJI_URL = 'https://cdn.jsdelivr.net/npm/emoji-datasource-apple@6.0.1/img/apple/64'
+
+export interface EmojiPickerProps {
+  onEmojiClick: (
+    event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+    output: {
+      unified: string
+      emoji: string
+      originalUnified: string
+      names: string[]
+      activeSkinTone?: string
+    }
+  ) => void
+  emojiUrl?: string
+  preload?: boolean
+  native?: boolean
+  skinTone?: keyof typeof SkinTones
+  disableAutoFocus?: boolean
+  disableSearchBar?: boolean
+  disableSkinTonePicker?: boolean
+  groupNames?: Partial<Record<GroupNames, string>>
+  pickerStyle?: React.CSSProperties
+  groupVisibility?: Partial<Record<GroupNames, boolean>>
+  searchPlaceholder?: string
+}
 
 const EmojiPicker = ({
   emojiUrl = DEFAULT_EMOJI_URL,
   onEmojiClick,
   preload = false,
   native = false,
-  skinTone = SKIN_TONE_NEUTRAL,
+  skinTone = 'Neutral',
   disableAutoFocus = false,
   disableSearchBar = false,
   disableSkinTonePicker = false,
   groupNames = {},
   pickerStyle = {},
   groupVisibility = {},
-  searchPlaceholder = null
-}) => {
-  const emojiListRef = useRef(null)
+  searchPlaceholder
+}: EmojiPickerProps) => {
+  const emojiListRef = useRef<HTMLElement>(null)
   const isMounted = useRef(true)
   const onClickRef = useRef(onEmojiClick)
 
@@ -54,7 +77,7 @@ const EmojiPicker = ({
   return (
     <PickerContextProvider
       config={{
-        skinTone,
+        skinTone: SkinTones[skinTone],
         emojiUrl,
         preload,
         native,
@@ -83,7 +106,11 @@ const EmojiPicker = ({
   )
 }
 
-function Aside({children, pickerStyle}) {
+interface AsideProps {
+  pickerStyle?: React.CSSProperties
+}
+
+const Aside: FC<AsideProps> = ({children, pickerStyle}) => {
   const closeVariations = useCloseVariationMenu()
   return (
     <aside className="emoji-picker-react" style={pickerStyle} onScroll={closeVariations} onMouseDown={closeVariations}>
@@ -102,14 +129,3 @@ export {
 }
 
 export default EmojiPicker
-
-Aside.propTypes = {
-  children: PropTypes.node,
-  pickerStyle: PropTypes.object
-}
-
-EmojiPicker.propTypes = {
-  onEmojiClick: PropTypes.func,
-  pickerStyle: PropTypes.objectOf(PropTypes.string),
-  ...configPropTypes
-}

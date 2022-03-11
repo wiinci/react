@@ -1,6 +1,7 @@
-import {EMOJI_PROPERTY_UNIFIED, EMOJI_PROPERTY_NAME} from '../../../lib/constants'
+import {EMOJI_PROPERTY_UNIFIED, EMOJI_PROPERTY_NAME} from './constants'
+import {Emoji} from './types'
 
-const emojiOutput = (unified, emoji, activeSkinTone, extra = {}) =>
+const emojiOutput = (unified: string, emoji: Emoji, activeSkinTone = 'neutral', extra = {}) =>
   Object.assign(
     {
       unified,
