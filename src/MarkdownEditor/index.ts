@@ -1,3 +1,4 @@
+import {MarkdownEditor} from './MarkdownEditor'
 export * from './MarkdownEditor'
 
 export {
@@ -10,3 +11,4 @@ export {
 } from './_useSuggestions'
 export {FileUploadResult} from './_useFileHandling'
 export {MarkdownViewMode} from './_ViewSwitch'
+export default MarkdownEditor
