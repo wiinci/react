@@ -1,7 +1,7 @@
 import {MarkdownEditor} from './MarkdownEditor'
 export * from './MarkdownEditor'
 
-export {
+export type {
   Emoji,
   Mentionable,
   Reference,
@@ -9,6 +9,6 @@ export {
   ReferenceSuggestionHandler,
   MentionSuggestionHandler
 } from './_useSuggestions'
-export {FileUploadResult} from './_useFileHandling'
-export {MarkdownViewMode} from './_ViewSwitch'
+export type {FileUploadResult} from './_useFileHandling'
+export type {MarkdownViewMode} from './_ViewSwitch'
 export default MarkdownEditor
