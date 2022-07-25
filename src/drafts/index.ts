@@ -7,4 +7,4 @@
 export * from '../NavList'
 export * from '../Dialog/Dialog'
 export * from '../SegmentedControl'
-export * from '../UnderlineNav'
+export * from '../UnderlineNav2'
