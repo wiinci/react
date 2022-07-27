@@ -40,7 +40,7 @@ const createSlots = <SlotNames extends string>(slotNames: SlotNames[]) => {
     const [isMounted, setIsMounted] = React.useState(false)
 
     // fires after all the effects in children
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
       rerenderWithSlots()
       setIsMounted(true)
     }, [rerenderWithSlots])
@@ -82,7 +82,7 @@ const createSlots = <SlotNames extends string>(slotNames: SlotNames[]) => {
   }> = ({name, children}) => {
     const {registerSlot, unregisterSlot, context} = React.useContext(SlotsContext)
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
       registerSlot(name, typeof children === 'function' ? children(context) : children)
       return () => unregisterSlot(name)
     }, [name, children, registerSlot, unregisterSlot, context])
